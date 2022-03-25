@@ -1,0 +1,32 @@
+from datetime import datetime, timedelta
+
+def gp(x):
+    for a in range(2, x + 1):
+        if pr(a):
+            p.append(a)
+
+def pr(z):
+    if z <= 1 :
+        return False
+    for b in range(2, z):
+        if z % b == 0:
+            return False
+    return True
+dy, dw, c= input().split()
+c= int(c)
+p=[]
+gp(365)
+dd={0:"Mon", 1:"Tue", 2:"Wed", 3:"Thu", 4:"Fri", 5:"Sat", 6:"Sun"}
+dy=datetime.strptime(dy, "%Y%m%d")
+d=-1
+for i in p:
+    date= dy + timedelta(i)
+    if pr(date.month) and dd[date.weekday()]==dw:
+        d=i
+        break
+if d==-1:
+    print("no", 0,end="")
+elif d<=c:
+    print("Yes", d,end="")
+else:
+    print("no", d,end="")
